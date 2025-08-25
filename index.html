@@ -93,40 +93,16 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="Ruby"><a href="#Ruby" class="headerlink" title="Ruby"></a>Ruby</h1><p>是一门编程语言</p>
-<blockquote>
-<h1 id="Ruby-is…"><a href="#Ruby-is…" class="headerlink" title="Ruby is…"></a>Ruby is…</h1><p>A dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to write. <sup><a target="_blank" rel="noopener" href="https://www.ruby-lang.org/en/">Ruby official website</a></sup></p>
-</blockquote>
-<h1 id="Homebrew"><a href="#Homebrew" class="headerlink" title="Homebrew"></a><a target="_blank" rel="noopener" href="https://brew.sh/">Homebrew</a></h1><p>包管理工具</p>
-<h2 id="Formulae"><a href="#Formulae" class="headerlink" title="Formulae"></a>Formulae</h2><blockquote>
-<p>A <em>formula</em> is a package definition written in Ruby. <sup><a target="_blank" rel="noopener" href="https://docs.brew.sh/Formula-Cookbook">Formula Cookbook</a></sup></p>
-</blockquote>
-<h2 id="Casks"><a href="#Casks" class="headerlink" title="Casks"></a>Casks</h2><blockquote>
-<p>Homebrew Cask extends <a target="_blank" rel="noopener" href="https://brew.sh/">Homebrew</a> and brings its elegance, simplicity, and speed to the installation and management of GUI macOS applications such as Visual Studio Code and Google Chrome.  <sup><a target="_blank" rel="noopener" href="https://github.com/Homebrew/homebrew-cask">Homebrew Cask GitHub repo</a></sup></p>
-</blockquote>
-<h2 id="🤔️-个人理解"><a href="#🤔️-个人理解" class="headerlink" title="🤔️ 个人理解"></a>🤔️ 个人理解</h2><p><em><strong>Formulae</strong></em> 是核心功能，多是命令行形式使用</p>
-<p><em><strong>Casks</strong></em> 是预编译可执行文件，多是带 <strong>GUI</strong> 的工具软件</p>
-<h1 id="🧾-总结"><a href="#🧾-总结" class="headerlink" title="🧾 总结"></a>🧾 总结</h1><ol>
-<li><p>Homebrew 是 macOS 上的 <strong>包管理工具</strong></p>
-</li>
-<li><p>Homebrew 安装的包可以分为 <em>Formulae</em> 和 <em>Casks</em><br>其中 <strong>Formulae</strong> 属于 <strong>核心类功能</strong>；<strong>Casks</strong> 属于 <strong>GUI型工具</strong>，更注重用户交互</p>
-</li>
-<li><p>Homebrew <strong>依赖 Ruby</strong>，从<strong>自身安装</strong>，到<strong>Formulae&#x2F;Casks 定义</strong></p>
-<blockquote>
-<p>在 Homebrew 的 install.sh 里面可以看到这段代码：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Homebrew requires Ruby $&#123;REQUIRED_RUBY_VERSION&#125; which was not found on your system.</span><br><span class="line">Homebrew portable Ruby requires Glibc version $&#123;REQUIRED_GLIBC_VERSION&#125; or newer,</span><br><span class="line">and your Glibc version is too old. See:</span><br><span class="line"><span class="meta prompt_">  $</span><span class="language-bash">&#123;tty_underline&#125;https://docs.brew.sh/Homebrew-on-Linux#requirements<span class="variable">$&#123;tty_reset&#125;</span></span></span><br><span class="line">Please install Ruby $&#123;REQUIRED_RUBY_VERSION&#125; and add its location to your PATH.</span><br></pre></td></tr></table></figure>
-</blockquote>
-</li>
-<li><p>Ruby 可以借助于工具<sup><strong>RVM</strong> (这个我用了), rbenv, chruby, asdf-vm, etc. </sup>实现多版本共存</p>
-</li>
-<li><p><strong>Ruby Gem</strong> 是 Ruby 的 包管理工具；<strong>CocoaPods</strong> 是使用 Ruby 编写的 <strong>iOS&#x2F;macOS 第三方库管理工具</strong></p>
-</li>
-</ol>
-
+        简述下使用 macOS 可能会遇到的如Ruby, Homebrew, RVM 等工具
+        
+          <p class="article-more-link">
+            <a href="/tech25/posts/87e70352/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://sean908.github.io/tech25/posts/87e70352/" data-id="cmeqrizsj00003ahdfmvdczf9" data-title="Ruby, Homebrew, etc. on macOS" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://sean908.github.io/tech25/posts/87e70352/" data-id="cmeqtwlev0001vohd2c4s7m1c" data-title="Ruby, Homebrew, etc. on macOS" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -165,58 +141,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://sean908.github.io/tech25/posts/13906/" data-id="cmajq4doz000180hdemaggco5" data-title="init" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/tech25/posts/16107/" class="article-date">
-  <time class="dt-published" datetime="2025-05-11T12:34:41.730Z" itemprop="datePublished">2025-05-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/tech25/posts/16107/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://sean908.github.io/tech25/posts/16107/" data-id="cmajq4dor000080hd36509cy0" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://sean908.github.io/tech25/posts/13906/" data-id="cmeqtwles0000vohd194p5pov" data-title="init" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -264,10 +189,6 @@
         
           <li>
             <a href="/tech25/posts/13906/">init</a>
-          </li>
-        
-          <li>
-            <a href="/tech25/posts/16107/">Hello World</a>
           </li>
         
       </ul>
