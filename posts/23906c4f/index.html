@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>brief usage summary of Colima | TechS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="简单记录一下 Colima 的使用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="brief usage summary of Colima">
+<meta property="og:url" content="https://sean908.github.io/tech25/posts/23906c4f/index.html">
+<meta property="og:site_name" content="TechS">
+<meta property="og:description" content="简单记录一下 Colima 的使用">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-08-25T09:05:01.000Z">
+<meta property="article:modified_time" content="2025-08-25T09:47:28.577Z">
+<meta property="article:author" content="Se@n">
+<meta property="article:tag" content="colima">
+<meta property="article:tag" content="docker">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/tech25/atom.xml" title="TechS" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/tech25/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/tech25/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/tech25/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/tech25/" id="logo">TechS</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/tech25/">Home</a>
+        
+          <a class="main-nav-link" href="/tech25/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/tech25/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://sean908.github.io/tech25"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-brief-usage-summary-of-Colima" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/tech25/posts/23906c4f/" class="article-date">
+  <time class="dt-published" datetime="2025-08-25T09:05:01.000Z" itemprop="datePublished">2025-08-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/tech25/categories/Docker/">Docker</a>►<a class="article-category-link" href="/tech25/categories/Docker/tools/">tools</a>►<a class="article-category-link" href="/tech25/categories/OS/">OS</a>►<a class="article-category-link" href="/tech25/categories/OS/macOS/">macOS</a>►<a class="article-category-link" href="/tech25/categories/OS/macOS/tools/">tools</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      brief usage summary of Colima
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p><a target="_blank" rel="noopener" href="https://github.com/abiosoft/colima">Colima</a> 是 macOS 上的轻量化运行时。</p>
+<blockquote>
+<p>Colima - container runtimes on macOS (and Linux) with minimal setup.</p>
+</blockquote>
+<h1 id="安装、使用"><a href="#安装、使用" class="headerlink" title="安装、使用"></a>安装、使用</h1><h2 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h2><p>需要 <strong>Homebrew</strong></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">还可以使用 MacPorts/Nix 等方式安装</span></span><br><span class="line">brew install colima</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">想要用 Docker 命令需要额外安装</span></span><br><span class="line">brew install docker</span><br></pre></td></tr></table></figure>
+
+<h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><p>默认配置文件在 <code>~/.colima/default/colima.conf</code></p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">colima start</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">等它自己启动完得到类似的输出即可</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">## cli info ###</span></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">INFO[0001] starting colima</span>                              </span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">INFO[0001] runtime: docker</span>                              </span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">INFO[0004] starting ...                                  context=vm</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">INFO[0028] provisioning ...                              context=docker</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">INFO[0031] starting ...                                  context=docker</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">INFO[0033] <span class="keyword">done</span></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">## EO cli info ###</span></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">现在你可以使用 docker/docker-compose 命令了</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="❓可能会遇到的问题"><a href="#❓可能会遇到的问题" class="headerlink" title="❓可能会遇到的问题"></a>❓可能会遇到的问题</h1><h2 id="Error-response-from-daemon-error-while-creating-mount-source-path-permission-denied"><a href="#Error-response-from-daemon-error-while-creating-mount-source-path-permission-denied" class="headerlink" title="Error response from daemon: error while creating mount source path ... permission denied"></a><code>Error response from daemon: error while creating mount source path ... permission denied</code></h2><p>这个问题是文件访问权限导致的，在上文提到的 colima.conf 里面添加配置：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">mounts:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">location:</span> <span class="string">~/the_path_docker_need_to_use</span> <span class="comment"># 挂载你的整个项目根目录，或者至少是包含data的目录</span></span><br><span class="line">    <span class="comment"># 或者更具体: location: /A/Absolute/Path</span></span><br><span class="line">    <span class="attr">writable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># 这两个参数是关键</span></span><br><span class="line">    <span class="comment"># 将挂载目录的权限映射到虚拟机内的 &#x27;colima&#x27; 用户（UID 1000, GID 1000 是 Colima 默认用户/组的常见ID）</span></span><br><span class="line">    <span class="comment">##owner: 1000</span></span><br><span class="line">    <span class="comment">##group: 1000</span></span><br><span class="line">    <span class="comment"># 也可以使用Colima的内置变量来自动获取宿主机的UID/GID (推荐):</span></span><br><span class="line">    <span class="comment"># owner: &quot;&#123;&#123; .User.UID &#125;&#125;&quot;</span></span><br><span class="line">    <span class="comment"># group: &quot;&#123;&#123; .User.GID &#125;&#125;&quot;</span></span><br><span class="line">    <span class="comment"># 或者直接使用用户名，Colima会尝试解析成UID/GID</span></span><br><span class="line">    <span class="comment"># owner: colima</span></span><br><span class="line">    <span class="comment"># group: colima</span></span><br></pre></td></tr></table></figure>
+
+<p>完成之后重启 colima:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">colima stop</span><br><span class="line"></span><br><span class="line">colima start</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="Tips-from-others"><a href="#Tips-from-others" class="headerlink" title="Tips from others"></a>Tips from others</h1><h2 id="Run-as-service"><a href="#Run-as-service" class="headerlink" title="Run as service"></a>Run as service</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew services start colima</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://sean908.github.io/tech25/posts/23906c4f/" data-id="cmeqxon7r00006zhd6p9a0r0l" data-title="brief usage summary of Colima" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tech25/tags/colima/" rel="tag">colima</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tech25/tags/docker/" rel="tag">docker</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/tech25/posts/87e70352/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Ruby, Homebrew, etc. on macOS</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/tech25/categories/Docker/">Docker</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/tech25/categories/Docker/tools/">tools</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/tech25/categories/OS/">OS</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/tech25/categories/OS/macOS/">macOS</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/tech25/categories/OS/macOS/tools/">tools</a></li></ul></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tech25/tags/colima/" rel="tag">colima</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tech25/tags/docker/" rel="tag">docker</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tech25/tags/colima/" style="font-size: 10px;">colima</a> <a href="/tech25/tags/docker/" style="font-size: 10px;">docker</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/tech25/archives/2025/08/">August 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/tech25/archives/2025/05/">May 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/tech25/posts/23906c4f/">brief usage summary of Colima</a>
+          </li>
+        
+          <li>
+            <a href="/tech25/posts/87e70352/">Ruby, Homebrew, etc. on macOS</a>
+          </li>
+        
+          <li>
+            <a href="/tech25/posts/13906/">init</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 Se@n<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/tech25/" class="mobile-nav-link">Home</a>
+  
+    <a href="/tech25/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/tech25/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/tech25/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/tech25/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
