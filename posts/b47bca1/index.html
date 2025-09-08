@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>FizzBuzz problem 思考 | TechS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="关于 FizzBuzz 解法的进一步思考">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FizzBuzz problem 思考">
+<meta property="og:url" content="https://sean908.github.io/tech25/posts/b47bca1/index.html">
+<meta property="og:site_name" content="TechS">
+<meta property="og:description" content="关于 FizzBuzz 解法的进一步思考">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-09-04T02:21:39.000Z">
+<meta property="article:modified_time" content="2025-09-08T06:38:32.503Z">
+<meta property="article:author" content="Se@n">
+<meta property="article:tag" content="code">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/tech25/atom.xml" title="TechS" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/tech25/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/tech25/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/tech25/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/tech25/" id="logo">TechS</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/tech25/">Home</a>
+        
+          <a class="main-nav-link" href="/tech25/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/tech25/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://sean908.github.io/tech25"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-FizzBuzz-problem" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/tech25/posts/b47bca1/" class="article-date">
+  <time class="dt-published" datetime="2025-09-04T02:21:39.000Z" itemprop="datePublished">2025-09-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      FizzBuzz problem 思考
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>这几天找了个Python的视频课在重温，前面大多是语言基础。</p>
+<p>在讲 <em><strong>for … loops</strong></em> 时看到用了这个 <em>FizzBuzz</em> 问题，老师说有多种解法，于是摒弃想到的解法，尝试换思路来试试。</p>
+<h1 id="问题概述"><a href="#问题概述" class="headerlink" title="问题概述"></a>问题概述</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">程序会顺序输出一串数字序列</span><br><span class="line">当某个数可以被3整除，不输出这个数，转而输出 Fizz</span><br><span class="line">当某个数可以被5整除，不输出这个数，转而输出 Buzz</span><br><span class="line">当某个数同时可以被3和5整除，不输出这个数，转而输出 FizzBuzz</span><br></pre></td></tr></table></figure>
+
+<h2 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h2><h3 id="传统解法"><a href="#传统解法" class="headerlink" title="传统解法"></a>传统解法</h3><p>可以说是相当 <strong>传统</strong> 了</p>
+<p>同时能被3和5整除的条件放到最前面，后续再去处理其余逻辑</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">101</span>):</span><br><span class="line">  <span class="keyword">if</span> i % <span class="number">15</span> == <span class="number">0</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;FizzBuzz&quot;</span>)</span><br><span class="line">  <span class="keyword">elif</span> i % <span class="number">3</span> == <span class="number">0</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Fizz&quot;</span>)</span><br><span class="line">  <span class="keyword">elif</span> i % <span class="number">5</span> == <span class="number">0</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Buzz&quot;</span>)</span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br></pre></td></tr></table></figure>
+
+<h3 id="字符串拼接法"><a href="#字符串拼接法" class="headerlink" title="字符串拼接法"></a>字符串拼接法</h3><h4 id="解法思路"><a href="#解法思路" class="headerlink" title="解法思路"></a>解法思路</h4><p>为每个数字都初始化一个空字符串。如果数字是 3 的倍数，就在字符串后面加上 “Fizz”；如果数字是 5 的倍数，就在字符串后面加上 “Buzz”。最后，检查这个字符串是否为空。如果为空，说明它既不是 3 的倍数也不是 5 的倍数，这时就输出数字本身；否则，输出拼接好的字符串。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">fizzbuzz_string_concatenation</span>(<span class="params">limit</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    使用字符串拼接方法实现 FizzBuzz。</span></span><br><span class="line"><span class="string">    :param limit: 生成 FizzBuzz 序列的上限。</span></span><br><span class="line"><span class="string">    :return: FizzBuzz 序列的列表。</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    results = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, limit + <span class="number">1</span>):</span><br><span class="line">        output = <span class="string">&quot;&quot;</span></span><br><span class="line">        <span class="keyword">if</span> i % <span class="number">3</span> == <span class="number">0</span>:</span><br><span class="line">            output += <span class="string">&quot;Fizz&quot;</span></span><br><span class="line">        <span class="keyword">if</span> i % <span class="number">5</span> == <span class="number">0</span>:</span><br><span class="line">            output += <span class="string">&quot;Buzz&quot;</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> output: <span class="comment"># 如果 output 仍然是空字符串，说明不是 3 或 5 的倍数</span></span><br><span class="line">            results.append(<span class="built_in">str</span>(i))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            results.append(output)</span><br><span class="line">    <span class="keyword">return</span> results</span><br><span class="line"></span><br><span class="line"><span class="comment"># 示例使用</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;--- 字符串拼接方法 ---&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(fizzbuzz_string_concatenation(<span class="number">15</span>))</span><br></pre></td></tr></table></figure>
+
+<h3 id="字典映射法"><a href="#字典映射法" class="headerlink" title="字典映射法"></a>字典映射法</h3><h4 id="解法思路-1"><a href="#解法思路-1" class="headerlink" title="解法思路"></a>解法思路</h4><p>使用字典来映射除数和对应的输出字符串。这使得逻辑更加模块化和可扩展。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">fizzbuzz_dict_mapping</span>(<span class="params">limit</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    使用字典映射方法实现 FizzBuzz。</span></span><br><span class="line"><span class="string">    :param limit: 生成 FizzBuzz 序列的上限。</span></span><br><span class="line"><span class="string">    :return: FizzBuzz 序列的列表。</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="comment"># 定义映射关系：&#123;除数: 字符串&#125;</span></span><br><span class="line">    divisible_map = &#123;</span><br><span class="line">        <span class="number">3</span>: <span class="string">&quot;Fizz&quot;</span>,</span><br><span class="line">        <span class="number">5</span>: <span class="string">&quot;Buzz&quot;</span></span><br><span class="line">        <span class="comment"># 可以轻松扩展：</span></span><br><span class="line">        <span class="comment"># 7: &quot;Whizz&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    results = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, limit + <span class="number">1</span>):</span><br><span class="line">        output = <span class="string">&quot;&quot;</span></span><br><span class="line">        <span class="comment"># 按照键（除数）排序，确保例如 FizzBuzz 总是先 Fizz 后 Buzz (如果需要的话，但这里顺序不影响结果)</span></span><br><span class="line">        <span class="comment"># 更重要的是，为了正确拼接，应该按照除数大小或优先级来拼接</span></span><br><span class="line">        <span class="comment"># 例如，如果你有 3:Fizz, 5:Buzz, 15:FizzBuzz，那么应该先检查 15。</span></span><br><span class="line">        <span class="comment"># 但我们这里不检查 15，而是组合 3 和 5，所以顺序影响不大</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 遍历字典，如果能被键整除，就拼接值</span></span><br><span class="line">        <span class="keyword">for</span> divisor <span class="keyword">in</span> <span class="built_in">sorted</span>(divisible_map.keys()): <span class="comment"># 排序保证了每次拼接的顺序一致性</span></span><br><span class="line">            <span class="keyword">if</span> i % divisor == <span class="number">0</span>:</span><br><span class="line">                output += divisible_map[divisor]</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> output:</span><br><span class="line">            results.append(<span class="built_in">str</span>(i))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            results.append(output)</span><br><span class="line">    <span class="keyword">return</span> results</span><br><span class="line"></span><br><span class="line"><span class="comment"># 示例使用</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\n--- 字典映射方法 ---&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(fizzbuzz_dict_mapping(<span class="number">15</span>))</span><br></pre></td></tr></table></figure>
+
+<h3 id="计数器法"><a href="#计数器法" class="headerlink" title="计数器法"></a>计数器法</h3><h4 id="解法思路-2"><a href="#解法思路-2" class="headerlink" title="解法思路"></a>解法思路</h4><p>改用计数器替代 <strong>取模运算</strong> 判断输出内容</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">fizzbuzz_mathematical_counters</span>(<span class="params">limit</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    使用计数器方法实现 FizzBuzz。</span></span><br><span class="line"><span class="string">    :param limit: 生成 FizzBuzz 序列的上限。</span></span><br><span class="line"><span class="string">    :return: FizzBuzz 序列的列表。</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    results = []</span><br><span class="line">    fizz_counter = <span class="number">3</span> <span class="comment"># 计数器，记录距离下一个 Fizz 还有多少个数字</span></span><br><span class="line">    buzz_counter = <span class="number">5</span> <span class="comment"># 计数器，记录距离下一个 Buzz 还有多少个数字</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, limit + <span class="number">1</span>):</span><br><span class="line">        output = <span class="string">&quot;&quot;</span></span><br><span class="line">        fizz_flag = <span class="literal">False</span></span><br><span class="line">        buzz_flag = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> fizz_counter == <span class="number">0</span>:</span><br><span class="line">            output += <span class="string">&quot;Fizz&quot;</span></span><br><span class="line">            fizz_counter = <span class="number">3</span> <span class="comment"># 重置计数器</span></span><br><span class="line">            fizz_flag = <span class="literal">True</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> buzz_counter == <span class="number">0</span>:</span><br><span class="line">            output += <span class="string">&quot;Buzz&quot;</span></span><br><span class="line">            buzz_counter = <span class="number">5</span> <span class="comment"># 重置计数器</span></span><br><span class="line">            buzz_flag = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> output: <span class="comment"># 如果没有拼接任何字符串</span></span><br><span class="line">            results.append(<span class="built_in">str</span>(i))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            results.append(output)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 每次迭代减少计数器</span></span><br><span class="line">        fizz_counter -= <span class="number">1</span></span><br><span class="line">        buzz_counter -= <span class="number">1</span></span><br><span class="line">        </span><br><span class="line">    <span class="keyword">return</span> results</span><br><span class="line"></span><br><span class="line"><span class="comment"># 示例使用</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\n--- 数学计数器方法 ---&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(fizzbuzz_mathematical_counters(<span class="number">15</span>))</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://sean908.github.io/tech25/posts/b47bca1/" data-id="cmfar3can0000hbhd8z3v6t4n" data-title="FizzBuzz problem 思考" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tech25/tags/code/" rel="tag">code</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/tech25/posts/a58f7e5b/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Different-RC-cmds-4-each-Terminal-App
+        
+      </div>
+    </a>
+  
+  
+    <a href="/tech25/posts/23906c4f/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">brief usage summary of Colima</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/tech25/categories/Docker/">Docker</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/tech25/categories/Docker/tools/">tools</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/tech25/categories/OS/">OS</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/tech25/categories/OS/macOS/">macOS</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/tech25/categories/OS/macOS/tools/">tools</a></li></ul></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tech25/tags/code/" rel="tag">code</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tech25/tags/colima/" rel="tag">colima</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tech25/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tech25/tags/shell/" rel="tag">shell</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tech25/tags/code/" style="font-size: 10px;">code</a> <a href="/tech25/tags/colima/" style="font-size: 10px;">colima</a> <a href="/tech25/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tech25/tags/shell/" style="font-size: 10px;">shell</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/tech25/archives/2025/09/">September 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/tech25/archives/2025/08/">August 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/tech25/archives/2025/05/">May 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/tech25/posts/a58f7e5b/">Different-RC-cmds-4-each-Terminal-App</a>
+          </li>
+        
+          <li>
+            <a href="/tech25/posts/b47bca1/">FizzBuzz problem 思考</a>
+          </li>
+        
+          <li>
+            <a href="/tech25/posts/23906c4f/">brief usage summary of Colima</a>
+          </li>
+        
+          <li>
+            <a href="/tech25/posts/87e70352/">Ruby, Homebrew, etc. on macOS</a>
+          </li>
+        
+          <li>
+            <a href="/tech25/posts/13906/">init</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 Se@n<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/tech25/" class="mobile-nav-link">Home</a>
+  
+    <a href="/tech25/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/tech25/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/tech25/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/tech25/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
